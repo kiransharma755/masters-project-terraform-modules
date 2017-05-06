@@ -1,3 +1,11 @@
+variable "env" {
+  description = "The environment"
+}
+
+variable "name" {
+  description = "Name prefix for resources"
+}
+
 variable "cidr" {
   description = "CIDR block for VPC"
 }
