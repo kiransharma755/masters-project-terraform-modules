@@ -19,7 +19,7 @@ resource "aws_security_group_rule" "allow_ssh_in" {
   from_port         = 22
   to_port           = 22
   protocol          = "tcp"
-  cidr_blocks       = ["${var.allowed_hosts}"]
+  cidr_blocks       = "${var.allowed_hosts}"
 }
 
 resource "aws_ecs_cluster" "main" {
