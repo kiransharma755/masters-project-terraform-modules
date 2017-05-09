@@ -15,6 +15,11 @@ variable "subnets" {
   type        = "list"
 }
 
+variable "allowed_hosts" {
+  description = "Subnet to launch ECS cluster instances in"
+  type        = "list"
+}
+
 variable "instance_type" {
   description = "Instance type for ECS cluster"
   default     = "t2.micro"
