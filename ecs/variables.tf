@@ -17,7 +17,6 @@ variable "subnets" {
 
 variable "allowed_hosts" {
   description = "Subnet to launch ECS cluster instances in"
-  type        = "list"
 }
 
 variable "instance_type" {
