@@ -1,9 +1,9 @@
 resource "aws_elb" "service_elb" {
   name                      = "${var.name}"
-  subnets                   = "${var.subnets}"
+  subnets                   = ["${var.subnets}"]
   connection_draining       = true
   cross_zone_load_balancing = true
-  security_groups           = "${var.security_groups}"
+  security_groups           = ["${var.security_groups}"]
 
   listener = {
     instance_port     = "${var.instance_port}"
