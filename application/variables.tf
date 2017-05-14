@@ -28,10 +28,6 @@ variable "container_definitions" {
   description = "Definitions for the service containers"
 }
 
-variable "service_iam_role" {
-  description = "IAM role to attach for the service"
-}
-
 variable "container_port" {
   description = "Application port on the container"
 }
