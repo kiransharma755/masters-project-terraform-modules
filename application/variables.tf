@@ -8,12 +8,10 @@ variable "name" {
 
 variable "subnets" {
   description = "Subnet to launch ECS cluster instances in"
-  type        = "list"
 }
 
 variable "security_groups" {
   description = "Security groups to attach to the application load balancer"
-  type        = "list"
 }
 
 variable "instance_port" {
