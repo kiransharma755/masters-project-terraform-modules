@@ -3,7 +3,7 @@ resource "aws_elb" "service_elb" {
   subnets                   = ["${var.subnets}"]
   connection_draining       = true
   cross_zone_load_balancing = true
-  security_groups           = ["${var.security_groups}"]
+  security_groups           = ["${aws_security_group.service_elb.id}"]
 
   listener = {
     instance_port     = "${var.instance_port}"
@@ -19,6 +19,28 @@ resource "aws_elb" "service_elb" {
     interval            = 5
     timeout             = 4
   }
+}
+
+resource "aws_security_group" "service_elb" {
+  name        = "Service ELB"
+  description = "Security group for ELB of ECS service"
+}
+
+resource "aws_security_group_rule" "allow_http_in" {
+  type              = "ingress"
+  to_port           = 80
+  from_port         = 80
+  protocol          = "tcp"
+  cidr_blocks       = ["0.0.0.0/0"]
+  security_group_id = "${aws_security_group.service_elb.id}"
+}
+
+resource "aws_security_group_rule" "allow_all_out" {
+  type              = "egress"
+  to_port           = 0
+  from_port         = "0"
+  protocol          = "-1"
+  security_group_id = "${aws_security_group.service_elb.id}"
 }
 
 resource "aws_ecs_task_definition" "service_task" {

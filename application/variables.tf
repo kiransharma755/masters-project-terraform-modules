@@ -11,10 +11,6 @@ variable "subnets" {
   type = "list"
 }
 
-variable "security_groups" {
-  description = "Security groups to attach to the application load balancer"
-}
-
 variable "instance_port" {
   description = "Application port on the instance"
 }
