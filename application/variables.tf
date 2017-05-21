@@ -6,9 +6,13 @@ variable "name" {
   description = "Name of the application"
 }
 
+variable "vpc" {
+  description = "VPC for ELB security group"
+}
+
 variable "subnets" {
-  description = "Subnet to launch ECS cluster instances in"
-  type = "list"
+  description = "Subnet for ECS Service ELB"
+  type        = "list"
 }
 
 variable "instance_port" {
