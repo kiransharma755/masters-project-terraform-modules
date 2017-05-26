@@ -36,10 +36,6 @@ variable "health_check_target" {
   description = "Target for the application's health check"
 }
 
-variable "container_definitions" {
-  description = "Definitions for the service containers"
-}
-
 variable "container_port" {
   description = "Application port on the container"
 }

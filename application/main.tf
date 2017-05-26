@@ -60,7 +60,7 @@ data "template_file" "task_definition" {
 
 resource "aws_ecs_task_definition" "service_task" {
   family                = "${var.name}"
-  container_definitions = "${var.container_definitions}"
+  container_definitions = "${data.template.task_definition.rendered}"
 }
 
 resource "aws_ecs_service" "service" {
