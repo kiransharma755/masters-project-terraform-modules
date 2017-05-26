@@ -45,6 +45,19 @@ resource "aws_security_group_rule" "allow_all_out" {
   security_group_id = "${aws_security_group.service_elb.id}"
 }
 
+data "template_file" "task_definition" {
+  template = "${file("${path.module}/files/ecs-task-definition.tpl")}"
+
+  vars {
+    name           = "${var.name}"
+    image          = "${var.image}"
+    cpu            = "${var.cpu_limit}"
+    memory         = "${var.memory_limit}"
+    container_port = "${var.container_port}"
+    host_port      = "${var.instance_port}"
+  }
+}
+
 resource "aws_ecs_task_definition" "service_task" {
   family                = "${var.name}"
   container_definitions = "${var.container_definitions}"

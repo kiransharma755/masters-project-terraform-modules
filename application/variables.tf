@@ -6,6 +6,19 @@ variable "name" {
   description = "Name of the application"
 }
 
+variable "image" {
+  description = "Docker image to deploy"
+}
+
+variable "cpu_limit" {
+  description = "CPU limit for the ECS task"
+  default     = 0
+}
+
+variable "memory_limit" {
+  description = "Memory limit for the ECS task"
+}
+
 variable "vpc" {
   description = "VPC for ELB security group"
 }
