@@ -49,7 +49,7 @@ data "template_file" "task_definition" {
   template = "${file("${path.module}/files/ecs-task-definition.tpl")}"
 
   vars {
-    name           = "${var.name}"
+    name           = "${var.name}-${var.env}"
     image          = "${var.image}"
     cpu            = "${var.cpu_limit}"
     memory         = "${var.memory_limit}"
