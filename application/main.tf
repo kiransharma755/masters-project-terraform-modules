@@ -22,7 +22,7 @@ resource "aws_elb" "service_elb" {
 }
 
 resource "aws_security_group" "service_elb" {
-  name        = "Service ELB"
+  name        = "${var.name}-${var.env} Service ELB"
   description = "Security group for ELB of ECS service"
   vpc_id      = "${var.vpc}"
 }
