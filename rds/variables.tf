@@ -22,17 +22,15 @@ variable "engine" {
 
 variable "engine_version" {
   description = "Engine version of the RDS instance"
-  type        = "map"
-
-  default = {
-    postgresql = "9.6.2"
-    mysql      = "5.7"
-  }
 }
 
 variable "instance_class" {
   description = "Class of RDS instance"
   default     = "db.t1.micro"
+}
+
+variable "publicly_accessible" {
+  description = "Parameter group for DB instance"
 }
 
 variable "username" {
@@ -45,4 +43,8 @@ variable "password" {
 
 variable "db_subnet_group_name" {
   description = "Database subnet group name"
+}
+
+variable "parameter_group_name" {
+  description = "Parameter group for DB instance"
 }
