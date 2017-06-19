@@ -41,10 +41,23 @@ variable "password" {
   description = "DB password"
 }
 
-variable "db_subnet_group_name" {
-  description = "Database subnet group name"
-}
-
 variable "parameter_group_name" {
   description = "Parameter group for DB instance"
+}
+
+variable "subnets" {
+  description = "List of subnets to place RDS instance into"
+}
+
+variable "zone_id" {
+  description = "ID of Route53 zone"
+}
+
+variable "ttl" {
+  description = "TTL for Route53 record"
+  default     = "900"
+}
+
+variable "vpc_id" {
+  description ="ID of VPC related to the RDS instance"
 }
