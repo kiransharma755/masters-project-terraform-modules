@@ -53,6 +53,7 @@ variable "password" {
 
 variable "parameter_group_name" {
   description = "Parameter group for DB instance"
+  default     = ""
 }
 
 variable "subnets" {
