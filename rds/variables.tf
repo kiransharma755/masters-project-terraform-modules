@@ -24,6 +24,16 @@ variable "engine_version" {
   description = "Engine version of the RDS instance"
 }
 
+variable "port" {
+  description = "The port which the instance listens to"
+  type        = "map"
+
+  default = {
+    postgresql = 5432
+    mysql      = 3306
+  }
+}
+
 variable "instance_class" {
   description = "Class of RDS instance"
   default     = "db.t1.micro"
@@ -59,5 +69,13 @@ variable "ttl" {
 }
 
 variable "vpc_id" {
-  description ="ID of VPC related to the RDS instance"
+  description = "ID of VPC related to the RDS instance"
+}
+
+variable "allowed_security_group_id" {
+  description = "ID of security group allowed to access the DB"
+}
+
+variable "bastion_ip" {
+  description = "IP address of bastion"
 }
