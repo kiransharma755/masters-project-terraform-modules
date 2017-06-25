@@ -43,3 +43,8 @@ variable "container_port" {
 variable "ecs_cluster" {
   description = "ECS cluster to put task into"
 }
+
+variable "env_vars" {
+  description = "Container environment variables"
+  type        = "map"
+}

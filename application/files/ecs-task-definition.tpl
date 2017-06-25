@@ -9,6 +9,7 @@
         "containerPort": ${container_port},
         "hostPort": ${host_port}
       }
-    ]
+    ],
+    "environment": [${environment}]
   }
 ]
