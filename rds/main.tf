@@ -56,4 +56,5 @@ resource "aws_route53_record" "rds" {
   name    = "${var.name}-${var.env}-rds"
   type    = "CNAME"
   ttl     = "${var.ttl}"
+  records = ["${aws_db_instance.default.address}"]
 }

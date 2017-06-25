@@ -29,8 +29,8 @@ variable "port" {
   type        = "map"
 
   default = {
-    postgresql = 5432
-    mysql      = 3306
+    postgres = 5432
+    mysql    = 3306
   }
 }
 
