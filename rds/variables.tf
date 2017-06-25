@@ -36,7 +36,7 @@ variable "port" {
 
 variable "instance_class" {
   description = "Class of RDS instance"
-  default     = "db.t1.micro"
+  default     = "db.t2.micro"
 }
 
 variable "publicly_accessible" {
