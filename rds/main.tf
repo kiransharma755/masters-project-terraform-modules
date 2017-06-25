@@ -48,7 +48,7 @@ resource "aws_security_group_rule" "allow_bastion_in" {
   from_port         = "${var.port[var.engine]}"
   to_port           = "${var.port[var.engine]}"
   protocol          = "tcp"
-  cidr_blocks       = ["${var.bastion_ip}"]
+  cidr_blocks       = ["${var.bastion_ip}/32"]
 }
 
 resource "aws_route53_record" "rds" {
