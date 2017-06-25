@@ -54,7 +54,7 @@ resource "aws_security_group_rule" "allow_bastion_in" {
 
 resource "aws_route53_record" "rds" {
   zone_id = "${var.zone_id}"
-  name    = "${var.name}-${var.env}-rds"
+  name    = "${var.name}-rds"
   type    = "CNAME"
   ttl     = "${var.ttl}"
   records = ["${aws_db_instance.default.address}"]
