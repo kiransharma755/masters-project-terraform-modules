@@ -3,6 +3,10 @@ variable "env" {
 }
 
 variable "name" {
+  description = "Identifier of the database instance"
+}
+
+variable "database_name" {
   description = "Name of the database"
 }
 
