@@ -58,6 +58,7 @@ variable "parameter_group_name" {
 
 variable "subnets" {
   description = "List of subnets to place RDS instance into"
+  type        = "list"
 }
 
 variable "zone_id" {

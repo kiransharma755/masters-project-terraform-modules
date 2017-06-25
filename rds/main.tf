@@ -10,12 +10,12 @@ resource "aws_db_instance" "default" {
   password               = "${var.password}"
   db_subnet_group_name   = "${aws_db_subnet_group.rds.name}"
   parameter_group_name   = "${var.parameter_group_name}"
-  vpc_security_group_ids = "${aws_security_group.rds.id}"
+  vpc_security_group_ids = ["${aws_security_group.rds.id}"]
 }
 
 resource "aws_db_subnet_group" "rds" {
   name       = "${var.name}"
-  subnet_ids = "${var.subnets}"
+  subnet_ids = ["${var.subnets}"]
 }
 
 resource "aws_security_group" "rds" {
