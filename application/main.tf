@@ -55,7 +55,7 @@ data "template_file" "task_definition" {
     memory         = "${var.memory_limit}"
     container_port = "${var.container_port}"
     host_port      = "${var.instance_port}"
-    environment    = "${jsonencode(var.env_vars)}"
+    environment    = "${var.env_vars}"
   }
 }
 

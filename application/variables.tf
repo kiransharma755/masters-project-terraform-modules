@@ -46,5 +46,5 @@ variable "ecs_cluster" {
 
 variable "env_vars" {
   description = "Container environment variables"
-  type        = "map"
+  default     = ""
 }
